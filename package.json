@@ -1,0 +1,25 @@
+{
+  "name": "bulkify-gulp",
+  "version": "0.0.1",
+  "description": "Using Bulkify with Gulp",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Lohr <chrisitan.lohr@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "~3.8.7",
+    "browserify": "~5.9.1",
+    "vinyl-source-stream": "~0.1.1",
+    "bulkify": "~1.0.2",
+    "bulk-require": "~0.2.1",
+    "gulp-uglify": "~0.3.1",
+    "hbsfy": "~2.0.0",
+    "glob": "~4.0.5",
+    "handlebars": "~2.0.0-alpha.4"
+  }
+}
