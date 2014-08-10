@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserify = require('browserify');
 var bulkify = require('bulkify');
+var hbsfy = require('hbsfy');
 var source = require('vinyl-source-stream');
 var entry = './src/modules/bulk.js';
 var output_filename = 'main.js';
@@ -13,6 +14,10 @@ gulp.task('bulkify', function() {
         entries: entry
     });
     bundleStream
+        .transform(hbsfy)
+        .on('error', function(err) {
+            console.log(err);
+        })
         .transform(bulkify)
         .on('error', function(err) {
             console.log(err);

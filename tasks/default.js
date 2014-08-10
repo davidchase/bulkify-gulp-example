@@ -2,5 +2,5 @@
 
 var gulp = require('gulp');
 gulp.task('default', ['bulkify'], function () {
-    gulp.watch(['src/modules/bulk.js'], ['bulkify']);
+    gulp.watch(['src/**/*.js', 'src/**/*.hbs'], ['bulkify']);
 });
