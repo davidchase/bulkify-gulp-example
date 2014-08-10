@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-gulp.task('default', ['browserify'], function () {
-    gulp.watch(['src/main.js'], ['bulkify']);
-    gulp.watch(['src/**/*.js'], ['browserify']);
+gulp.task('default', ['bulkify'], function () {
+    gulp.watch(['src/modules/bulk.js'], ['bulkify']);
 });

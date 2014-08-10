@@ -1,2 +1,2 @@
 var gulp = require('gulp');
-gulp.task('build', ['bulkify', 'browserify', 'uglify']);
+gulp.task('build', ['uglify']);
