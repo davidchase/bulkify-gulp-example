@@ -8,27 +8,25 @@ var source = require('vinyl-source-stream');
 var entry = './src/modules/bulk.js';
 var output_filename = 'main.js';
 var output_path = './dist/js';
+var buffer = require('vinyl-buffer');
+var ugilfy = require('gulp-uglify');
+var Combine = require('stream-combiner');
 
 gulp.task('bulkify', function() {
     var bundleStream = browserify({
         entries: entry
     });
-    bundleStream
-        .transform(hbsfy)
-        .on('error', function(err) {
-            console.log(err);
-        })
-        .transform(bulkify)
-        .on('error', function(err) {
-            console.log(err);
-        })
+    var combined = new Combine(
+        bundleStream
         .bundle()
-        .on('error', function(err) {
-            console.log(err);
-        })
         .pipe(source(output_filename))
-        .on('error', function(err) {
-            console.log(err);
-        })
-        .pipe(gulp.dest(output_path));
+        .pipe(buffer())
+        .pipe(ugilfy())
+        .pipe(gulp.dest(output_path)));
+
+    combined.on('error', function(err) {
+        console.error(err.message)
+    });
+
+    return combined;
 });

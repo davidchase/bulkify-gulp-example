@@ -1,25 +1,30 @@
 {
-  "name": "bulkify-gulp",
-  "version": "0.0.1",
-  "description": "Using Bulkify with Gulp",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Christian Lohr <chrisitan.lohr@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "~3.8.7",
-    "browserify": "~5.9.1",
-    "vinyl-source-stream": "~0.1.1",
-    "bulkify": "~1.0.2",
-    "bulk-require": "~0.2.1",
-    "gulp-uglify": "~0.3.1",
-    "glob": "~4.0.5",
-    "hbsfy": "~2.0.0",
-    "handlebars": "~2.0.0-alpha.4"
-  }
+    "name": "bulkify-gulp",
+    "version": "0.0.1",
+    "description": "Using Bulkify with Gulp",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Christian Lohr <chrisitan.lohr@gmail.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "browserify": "~5.9.1",
+        "bulk-require": "~0.2.1",
+        "bulkify": "~1.0.2",
+        "glob": "~4.0.5",
+        "gulp": "~3.8.7",
+        "gulp-uglify": "~0.3.1",
+        "handlebars": "~2.0.0-alpha.4",
+        "hbsfy": "~2.0.0",
+        "stream-combiner": "^0.2.1",
+        "vinyl-buffer": "0.0.0",
+        "vinyl-source-stream": "~0.1.1"
+    },
+    "browserify": {
+        "transform": ["hbsfy", "bulkify"]
+    }
 }
